@@ -4,7 +4,7 @@ import {
   useDeleteTaskMutation,
   TaskStatus,
   useUpdateTaskMutation,
-} from '../generated/graphql-frontend';
+} from '../hooks';
 import Link from 'next/link';
 import { Reference } from '@apollo/client';
 

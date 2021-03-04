@@ -1,6 +1,5 @@
 import React from 'react';
-import { Task } from '../generated/graphql-frontend';
-import Link from 'next/link';
+import { Task } from '../hooks';
 import TaskListItem from './TaskListItem';
 
 interface Props {

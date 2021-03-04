@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { TaskStatus } from '../generated/graphql-frontend';
+import { TaskStatus } from '../hooks';
 
 interface Props {
   status?: TaskStatus;

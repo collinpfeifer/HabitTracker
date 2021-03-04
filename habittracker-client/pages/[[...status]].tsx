@@ -1,16 +1,17 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import Head from 'next/head';
-import { initializeApollo } from '../lib/client';
+import { initializeApollo } from '../client';
 import {
   useTasksQuery,
   TasksQuery,
   TasksDocument,
   TasksQueryVariables,
-} from '../generated/graphql-frontend';
+} from '../hooks';
 import TaskList from '../components/TaskList';
 import CreateTaskForm from '../components/CreateTaskForm';
 import TaskFilter from '../components/TaskFilter';
 import { useRouter } from 'next/router';
-import { TaskStatus } from '../generated/graphql-frontend';
+import { TaskStatus } from '../hooks';
 import { GetServerSideProps } from 'next';
 import { useRef, useEffect } from 'react';
 import { Custom404 } from './404';

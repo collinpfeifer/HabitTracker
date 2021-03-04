@@ -1,11 +1,11 @@
 import { GetServerSideProps } from 'next';
-import { initializeApollo } from '../../lib/client';
+import { initializeApollo } from '../../client';
 import {
   TaskQuery,
   TaskQueryVariables,
   TaskDocument,
   useTaskQuery,
-} from '../../generated/graphql-frontend';
+} from '../../hooks';
 import { useRouter } from 'next/router';
 import Error from 'next/error';
 import UpdateTaskForm from '../../components/UpdateTaskForm';
@@ -17,6 +17,7 @@ const UpdateTask = () => {
   if (!id) {
     return <Error statusCode={404} />;
   }
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const { data, loading, error } = useTaskQuery({ variables: { id } });
   const task = data?.task;
   return loading ? (

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useCreateTaskMutation } from '../generated/graphql-frontend';
+import { useCreateTaskMutation } from '../hooks';
 
 interface Props {
   onSuccess: () => void;

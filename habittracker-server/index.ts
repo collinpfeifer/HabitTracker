@@ -1,12 +1,18 @@
-import { ApolloServer } from 'apollo-server';
-import { typeDefs } from './graphql/typeDefs';
-import { resolvers } from './graphql/resolvers/tasks';
+const { ApolloServer } = require('apollo-server');
+const { typeDefs } = require('./graphql/typeDefs');
+const { resolvers } = require('./graphql/resolvers/tasks');
+const { db } = require('./database/db.ts');
 
-export const server = new ApolloServer({
+const port = process.env.PORT || 5000;
+
+const server = new ApolloServer({
   typeDefs,
   resolvers,
+  context: { db },
 });
 
-server.listen().then(({ url }) => {
-  console.log(`🚀  Server ready at ${url}`);
+server.listen({ port }).then(() => {
+  console.log(`🚀  Server ready at ${port}`);
 });
+
+export {};

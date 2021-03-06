@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { TaskStatus } from '../hooks';
 
 interface Props {
-  status?: TaskStatus;
+  status?: TaskStatus | string;
 }
 
 const TaskFilter: React.FC<Props> = ({ status }) => {
